@@ -1,0 +1,25 @@
+{
+  "name": "outtabounds",
+  "version": "1.0.0",
+  "description": "The Outta Bounds Hawaii Bicycle Tours and Racing Team Website",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sflanker/outtabounds.git"
+  },
+  "keywords": [
+    "Eleventy",
+    "11ty",
+    "webpage"
+  ],
+  "author": "Paul Wheeler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sflanker/outtabounds/issues"
+  },
+  "homepage": "http://www.outtaboundshawaii.com/",
+  "dependencies": {
+    "handlebars": "^4.1.2",
+    "moment": "^2.24.0"
+  }
+}

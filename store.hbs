@@ -1,0 +1,51 @@
+/*---
+layout: full-page-background.hbs
+title: Outta Bounds Hawaii Store
+head: |
+  <style>
+    #home-link {
+      display: none;
+    }
+
+    #page-background {
+      display: none;
+      z-index: -1;
+    }
+
+    #social {
+      position: fixed;
+      bottom: 0;
+    }
+
+    body {
+      padding-bottom: 90px;
+      overflow: hidden;
+    }
+
+    #store-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 90px;
+    }
+
+    #store-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+---*/
+
+<script type="text/javascript">
+  if (!document.cookie.match(/^(.*;)?\s*fixed\s*=\s*[^;]+(.*)?$/)) {
+    console.log('redirecting to initiate store session');
+    // Only perform the redirect on the first visit
+    document.cookie = 'fixed=fixed; expires=Tue, 19 Jan 2038 03:14:07 UTC; path=/';
+    window.location.replace('https://outtaboundshawaii.square.site/store-redirect');
+  }
+</script>
+<div id="store-container">
+  <iframe src="https://outtaboundshawaii.square.site/" title="Outta Bounds Hawaii Store" allow="payment 'src'"></iframe>
+</div>

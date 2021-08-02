@@ -1,0 +1,14 @@
+/*---
+layout: master.hbs
+---*/
+
+<div id="page-background" class="fill-screen-absolute">
+</div>
+<script type="text/javascript">
+  let pageBg = $('#page-background');
+  pageBg.ready(() => pageBg.addClass('fade-in'))
+</script>
+<a id="home-link" href="/index.html" title="Home">
+  <img id="logo" src="/images/OuttaBoundsLogo.svg" height="55" width="55" alt="Outta Bounds Hawaii" />
+</a>
+{{{content}}}

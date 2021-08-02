@@ -1,0 +1,115 @@
+/*---
+layout: master.hbs
+permalink: index.html
+title: Outta Bounds Hawaii
+head: |
+  <style type="text/css">
+    #welcome-background {
+      background: url('images/Haleakala.jpg') no-repeat fixed;
+      background-size: cover;
+      background-position: top center;
+      opacity: 0;
+    }
+
+    #logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -110px;
+      margin-left: -110px;
+      filter: drop-shadow(0 0 6px lightgray);
+    }
+
+    #store-image {
+      background: url('images/OhanaCarl.jpg') no-repeat fixed;
+      background-size: cover;
+      background-position: top center;
+    }
+
+    #tours-image {
+      background: url('images/Group.jpg') no-repeat fixed;
+      background-size: cover;
+      background-position: top center;
+    }
+
+    #team-image {
+      background: url('images/PineappleSprint.jpg') no-repeat fixed;
+      background-size: cover;
+      background-position: top center;
+    }
+
+    #calendar-image {
+      background: url('images/CastleToHanauma.jpg') no-repeat fixed;
+      background-size: cover;
+      background-position: top center;
+    }
+  </style>
+---*/
+
+<div id="welcome" class="fill-screen">
+  <div id="welcome-background" class="fill-screen"></div>
+  <img id="logo" src="images/OuttaBoundsLogo.svg" height="220" width="220" alt="Outta Bounds Hawaii" />
+</div>
+<script type="text/javascript">
+  let welcomeBg = $('#welcome-background');
+  welcomeBg.ready(() => welcomeBg.addClass('fade-in'))
+</script>
+<div id="store" class="home-section hidden">
+  <div id="store-banner" class="banner">
+    <a href="https://store.outtaboundshawaii.com/" class="title"><span>Outta Bounds Hawaii Store 🛒</span></a>
+  </div>
+  <div id="store-image" class="image">
+  </div>
+</div>
+<div id="tours" class="home-section hidden">
+  <div id="tours-banner" class="banner">
+    <a href="tours.html" class="title"><span>Outta Bounds Hawaii Bike Tours</span></a>
+  </div>
+  <div id="tours-image" class="image">
+  </div>
+</div>
+<div id="team" class="home-section hidden">
+  <div id="team-banner" class="banner">
+    <a href="team.html" class="title"><span>Outta Bounds Racing Team</span></a>
+  </div>
+  <div id="team-image" class="image">
+  </div>
+</div>
+<div id="calendar" class="home-section hidden">
+  <div id="calendar-banner" class="banner">
+    <a href="races/index.html" class="title"><span>Outta Bounds Sponsored Races</span></a>
+  </div>
+  <div id="calendar-image" class="image">
+  </div>
+</div>
+
+<script type="text/javascript">
+  let storeReady = false, toursReady = false, teamReady = false, calendarReady = false;
+
+  let storeSection = $('#store');
+  let toursSection = $('#tours');
+  let teamSection = $('#team');
+  let calendarSection = $('#calendar');
+  let sections = [ storeSection, toursSection, teamSection, calendarSection, $('#social') ] ;
+  let displayWhenReady = () => {
+    if (storeReady && toursReady && teamReady && calendarReady) {
+      sections.forEach(s => s.removeClass('hidden'));
+    }
+  };
+  storeSection.ready(() => {
+    storeReady = true;
+    displayWhenReady();
+  });
+  toursSection.ready(() => {
+    toursReady = true;
+    displayWhenReady();
+  });
+  teamSection.ready(() => {
+    teamReady = true;
+    displayWhenReady();
+  });
+  calendarSection.ready(() => {
+    calendarReady = true;
+    displayWhenReady();
+  })
+</script>
