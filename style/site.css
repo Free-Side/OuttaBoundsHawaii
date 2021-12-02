@@ -1,3 +1,7 @@
+:root {
+  --jochem-orange: #f38700;
+}
+
 html {
   height: 100%;
 }
@@ -9,6 +13,10 @@ body {
   overflow-y: scroll;
   fill: currentColor;
   font-family: 'Helvetica', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 thead {
@@ -112,7 +120,7 @@ img.fit-width {
 .banner {
   background-color: white;
   padding: 20px;
-  width: calc(100% - 40px);
+  width: 100%;
   height: 150px;
   min-height: fit-content;
 
@@ -123,7 +131,7 @@ img.fit-width {
 }
 
 .banner.short {
-  height: 50px;
+  height: unset;
 }
 
 .banner a {
@@ -182,6 +190,14 @@ img.fit-width {
   }
 }
 
+.link-button {
+  display: block;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .hidden {
   visibility: hidden;
 }
@@ -213,10 +229,11 @@ img.fit-width {
 
 #social-banner {
   justify-content: center;
+  box-shadow: 5px 5px 21px #000c;
 }
 
 #social-banner a {
-  height: 50px;
+  /* height: 50px; */
   margin-right: 20px;
 }
 
@@ -229,4 +246,8 @@ img.fit-width {
   body {
     padding-bottom: 90px;
   }
+}
+
+.jochem-orange-bg {
+  background-color: var(--jochem-orange);
 }

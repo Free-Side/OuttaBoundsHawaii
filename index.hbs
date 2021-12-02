@@ -4,19 +4,69 @@ permalink: index.html
 title: Outta Bounds Hawaii
 head: |
   <style type="text/css">
+    #welcome {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      width: 100%;
+      position: relative;
+    }
+
+    #welcome > *:not(:first-child) {
+      margin-top: 40px;
+    }
+
+    #welcome > *:last-child {
+      margin-bottom: 40px;
+    }
+
     #welcome-background {
+      position: absolute;
       background: url('images/Haleakala.jpg') no-repeat fixed;
       background-size: cover;
       background-position: top center;
       opacity: 0;
+      height: 100%;
+    }
+
+    #new-item-banner {
+      display: flex;
+      width: 600px;
+      background-color: white;
+      position: relative;
+      border-radius: 10px;
+      padding: 1em;
+      align-items: center;
+      font-size: 18px;
+      box-shadow: 5px 5px 21px #000c;
+    }
+
+    #new-item-link {
+      position: absolute;
+      right: 1em;
+      bottom: 1em;
+      margin-right: 1em;
+      color: #eee;
+    }
+
+    @media only screen and (max-width: 700px) {
+      #new-item-banner img {
+        width: 50%;
+        height: auto;
+        margin-left: -30px;
+      }
+      #new-item-banner p {
+        margin-bottom: 50px;
+      }
+      #new-item-banner {
+        width: 100%;
+        border-radius: 0;
+      }
     }
 
     #logo {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-top: -110px;
-      margin-left: -110px;
       filter: drop-shadow(0 0 6px lightgray);
     }
 
@@ -46,9 +96,16 @@ head: |
   </style>
 ---*/
 
-<div id="welcome" class="fill-screen">
+<div id="welcome">
   <div id="welcome-background" class="fill-screen"></div>
   <img id="logo" src="images/OuttaBoundsLogo.svg" height="220" width="220" alt="Outta Bounds Hawaii" />
+  <div id="new-item-banner">
+    <img src="images/Greg-Jochem-Jersey.jpeg" alt="Greg Jochem Jersey" width="320" height="332" />
+    <p>Our 2022 jersey honoring our good friend Greg Jochem (1958 - 2021) is coming soon! Delivery expected by Christmas 2021. Shipping to Oahu includes a free tube or Co2.</p>
+    <a id="new-item-link" href="https://checkout.square.site/buy/ZMJOR7UJ2QY4STL3GFZJY65R" class="link-button jochem-orange-bg">
+      Order Now
+    </a>
+  </div>
 </div>
 <script type="text/javascript">
   let welcomeBg = $('#welcome-background');
@@ -90,7 +147,7 @@ head: |
   let toursSection = $('#tours');
   let teamSection = $('#team');
   let calendarSection = $('#calendar');
-  let sections = [ storeSection, toursSection, teamSection, calendarSection, $('#social') ] ;
+  let sections = [storeSection, toursSection, teamSection, calendarSection, $('#social')];
   let displayWhenReady = () => {
     if (storeReady && toursReady && teamReady && calendarReady) {
       sections.forEach(s => s.removeClass('hidden'));
