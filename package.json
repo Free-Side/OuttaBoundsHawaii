@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "The Outta Bounds Hawaii Bicycle Tours and Racing Team Website",
   "private": true,
+  "scripts": {
+    "serve": "eleventy --serve",
+    "build": "eleventy",
+    "deploy": "gsutil rsync -r -d -x '.DS_Store' ./_site gs://www.outtaboundshawaii.com"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sflanker/outtabounds.git"
+    "url": "git+https://github.com/free-side/outtabounds.git"
   },
   "keywords": [
     "Eleventy",
@@ -13,13 +18,16 @@
     "webpage"
   ],
   "author": "Paul Wheeler",
-  "license": "MIT",
+  "license": "Copyright",
   "bugs": {
-    "url": "https://github.com/sflanker/outtabounds/issues"
+    "url": "https://github.com/free-side/outtabounds/issues"
   },
   "homepage": "http://www.outtaboundshawaii.com/",
   "dependencies": {
-    "handlebars": "^4.1.2",
-    "moment": "^2.24.0"
+    "@11ty/eleventy": "^1.0.0",
+    "handlebars": "^4.7.7",
+    "js-yaml": "^4.1.0",
+    "moment": "^2.24.0",
+    "sass": "^1.48.0"
   }
 }
